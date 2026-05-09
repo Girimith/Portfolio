@@ -136,6 +136,7 @@
       text-decoration:none;
       font-weight:bold;
       transition:0.3s;
+      display:inline-block;
     }
 
     .btn-primary{
@@ -173,7 +174,8 @@
       width:380px;
       height:380px;
       object-fit:cover;
-      object-position:top;
+      object-position:center top;
+      margin-top:-30px;
       border-radius:50%;
       border:6px solid #38bdf8;
       box-shadow:
@@ -185,12 +187,10 @@
         saturate(1.2)
         brightness(1.02);
       background:#1e293b;
-
-      transform:translateY(-25px);
     }
 
     .hero-image img:hover{
-      transform:translateY(-25px) scale(1.05);
+      transform:scale(1.05);
     }
 
     /* SECTION */
@@ -305,6 +305,7 @@
       .hero-image img{
         width:280px;
         height:280px;
+        margin-top:0;
       }
     }
 
@@ -372,10 +373,9 @@
 
         <a href="#contact" class="btn btn-primary">Hire Me</a>
 
-        <a href="resume/Giridharan_Resume.pdf"
-           download
-           class="btn btn-outline">
-           Download Resume
+        <!-- DOWNLOAD RESUME BUTTON -->
+        <a href="resume/Giridharan_Resume.pdf" download class="btn btn-outline">
+          Download Resume
         </a>
 
       </div>
@@ -386,6 +386,7 @@
 
     <div class="hero-image">
 
+      <!-- Replace with your exact image name -->
       <img src="2247 - giri dharan.png" alt="Giridharan">
 
     </div>
