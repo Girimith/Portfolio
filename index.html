@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Giridharan | Senior Unity Developer</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      background:rgba(15,23,42,0.95);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    nav{
+      width:90%;
+      margin:auto;
+      padding:18px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:bold;
+      color:#38bdf8;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:70px;
+      padding:120px 8% 60px;
+      flex-wrap:wrap;
+      background:linear-gradient(to right,#0f172a,#111827);
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h3{
+      color:#38bdf8;
+      font-size:24px;
+      margin-bottom:10px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      margin-bottom:15px;
+    }
+
+    .hero-text h2{
+      font-size:30px;
+      color:#cbd5e1;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      color:#94a3b8;
+      font-size:17px;
+      margin-bottom:15px;
+    }
+
+    .info{
+      margin-top:20px;
+    }
+
+    .info p{
+      margin-bottom:10px;
+      color:#e2e8f0;
+    }
+
+    .info a{
+      color:#38bdf8;
+      text-decoration:none;
+    }
+
+    .hero-buttons{
+      margin-top:30px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .btn-primary:hover{
+      background:#0ea5e9;
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      border:2px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .btn-outline:hover{
+      background:#38bdf8;
+      color:#0f172a;
+      transform:translateY(-3px);
+    }
+
+    /* IMAGE */
+
+    .hero-image{
+      flex:1;
+      min-width:300px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-image img{
+      width:380px;
+      height:380px;
+      object-fit:cover;
+      object-position:top;
+      border-radius:50%;
+      border:6px solid #38bdf8;
+      box-shadow:
+        0 0 20px rgba(56,189,248,0.5),
+        0 0 50px rgba(56,189,248,0.3);
+      transition:0.4s ease;
+      filter:
+        contrast(1.1)
+        saturate(1.2)
+        brightness(1.02);
+      background:#1e293b;
+    }
+
+    .hero-image img:hover{
+      transform:scale(1.05);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:80px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:50px;
+      color:#38bdf8;
+    }
+
+    /* ABOUT */
+
+    .about{
+      max-width:900px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .about p{
+      font-size:18px;
+      color:#cbd5e1;
+    }
+
+    /* SKILLS & PROJECTS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#38bdf8;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    .card p{
+      color:#cbd5e1;
+      margin-bottom:10px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin-bottom:15px;
+      font-size:18px;
+      color:#cbd5e1;
+    }
+
+    .contact a{
+      color:#38bdf8;
+      text-decoration:none;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:20px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .hero-text h2{
+        font-size:22px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-image img{
+        width:280px;
+        height:280px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <nav>
+
+      <div class="logo">Giridharan</div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <h3>Hello, I'm</h3>
+
+      <h1>Giridharan P</h1>
+
+      <h2>Senior Unity Developer | XR Developer</h2>
+
+      <p>
+        Passionate Unity & XR Developer with experience in building immersive
+        AR/VR applications, multiplayer games, and interactive real-time experiences.
+      </p>
+
+      <div class="info">
+
+        <p>📞 8825439937</p>
+
+        <p>📧 giridharan445@gmail.com</p>
+
+        <p>📍 Chennai, Tamil Nadu, India</p>
+
+        <p>
+          🔗
+          <a href="https://www.linkedin.com/in/giridharan-p-367788120" target="_blank">
+            LinkedIn Profile
+          </a>
+        </p>
+
+      </div>
+
+      <div class="hero-buttons">
+
+        <a href="#contact" class="btn btn-primary">Hire Me</a>
+
+        <a href="#" class="btn btn-outline">Download Resume</a>
+
+      </div>
+
+    </div>
+
+    <!-- PHOTO -->
+
+    <div class="hero-image">
+
+      <img src="2247 - giri dharan.jpg" alt="Giridharan">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
+      <p>
+        I am a Senior Unity Developer specialized in XR (AR/VR/MR)
+        development and real-time interactive applications.
+        I enjoy creating immersive experiences, optimized gameplay systems,
+        and scalable architectures using Unity and C#.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Unity 3D</h3>
+        <p>Advanced game and application development using Unity Engine.</p>
+      </div>
+
+      <div class="card">
+        <h3>XR Development</h3>
+        <p>AR, VR and Mixed Reality application development.</p>
+      </div>
+
+      <div class="card">
+        <h3>C# Programming</h3>
+        <p>Clean architecture and scalable coding practices.</p>
+      </div>
+
+      <div class="card">
+        <h3>Photon Networking</h3>
+        <p>Multiplayer systems and networking implementation.</p>
+      </div>
+
+      <div class="card">
+        <h3>AR Foundation</h3>
+        <p>Cross-platform AR app development using Unity.</p>
+      </div>
+
+      <div class="card">
+        <h3>Meta Quest</h3>
+        <p>VR experiences and training simulations for Quest devices.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>🎮 Multiplayer Mobile Game</h3>
+
+        <p>
+          Developed multiplayer systems using Photon Networking.
+        </p>
+
+        <p>
+          Implemented matchmaking and real-time synchronization.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>🥽 VR Training Simulation</h3>
+
+        <p>
+          Created immersive VR applications for Meta Quest devices.
+        </p>
+
+        <p>
+          Implemented interaction systems using XR Toolkit.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>📱 AR Product Visualization</h3>
+
+        <p>
+          Developed AR applications using AR Foundation.
+        </p>
+
+        <p>
+          Implemented real-time object placement and interaction.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact">
+
+      <p>📞 8825439937</p>
+
+      <p>📧 giridharan445@gmail.com</p>
+
+      <p>📍 Chennai, Tamil Nadu, India</p>
+
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/giridharan-p-367788120" target="_blank">
+          Visit Profile
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Giridharan P | Senior Unity Developer | XR Developer
+
+  </footer>
+
+</body>
+</html>
